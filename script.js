@@ -31,8 +31,19 @@ window.addEventListener("scroll", () => {
     const navLinks = document.querySelectorAll("nav a");
     navLinks.forEach((link) => {
         link.classList.remove("text-primary");
+        link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
             link.classList.add("text-primary");
+            link.classList.add("active");
+        }
+    });
+
+    // Update Bottom Nav
+    const bottomLinks = document.querySelectorAll(".bottom-nav-link");
+    bottomLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
         }
     });
 });
